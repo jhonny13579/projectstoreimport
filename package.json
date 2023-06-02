@@ -4,6 +4,10 @@
   "description": "Ecomerce Pedidos",
   "main": "index.js",
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.3",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.0.10",
     "alertifyjs": "^1.13.1",

@@ -1,4 +1,7 @@
 
+.Content{
+    overflow-y: hidden;
+}
 .mainbody{
     display: flex;
     margin-left: -190px;
@@ -98,4 +101,13 @@
 .mainboton{
 
     display: flex;
+}
+.ButtoIntranet {
+  max-width: 160px;
+  margin: 0 auto;
+  margin: 2%;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  z-index: 112;
 }

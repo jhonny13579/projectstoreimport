@@ -11,8 +11,6 @@ const TableDinamic = dynamic(
   }
 );
 
-
-
 import { apiLogin } from "../../api/index";
 import { Loader } from "../../utils/loader";
 import Label from "../../../../components/UI/atoms/label/Label";
@@ -35,10 +33,8 @@ const COLUMNS = [
 
 const Login = () => {
   const [loginValue, setLoginValue] = useState({
-
-    usuario:"",
-    contrasenia:"",
-
+    usuario: "",
+    contrasenia: "",
   });
   const [Loading, setloading] = useState(false);
   const [dataDummy, setDataDummy] = useState([]);
@@ -47,11 +43,10 @@ const Login = () => {
 
   const handleInputChange = (e) => {
     setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
-    console.log("loginValue" , loginValue)
+    console.log("loginValue", loginValue);
   };
 
   const handleClickIngresar = async () => {
-
     localStorage.removeItem("userLogin");
     const user = {
       Email: loginValue.usuario,
@@ -60,6 +55,7 @@ const Login = () => {
       IdToken: "",
     };
 
+    window.location.href = "/Intranet/vistas/principal";
     const promise = apiLogin.ValidaLogin(user);
     console.log("promise", promise);
     promise.then((res) => {
@@ -125,13 +121,11 @@ const Login = () => {
           </div>
           <div className="inputBx col-12">
             <ButtonA
-            classname={styles.button}
+              classname={styles.button}
               type="button"
               value="Ingresar"
               onClick={handleClickIngresar}
-            >
-            </ButtonA>
- 
+            ></ButtonA>
           </div>
         </form>
       </div>

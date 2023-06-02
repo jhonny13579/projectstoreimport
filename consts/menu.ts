@@ -8,7 +8,7 @@ export const menuDefault = [
     child: [
       {
         label: 'Horario',
-        link: '/horario',
+        link: '/Intranet/vistas/principal',
         child: [],
         target: false,
       },
@@ -219,4 +219,128 @@ export const menuDefault = [
     ],
     target: false,
   },
+]
+export const menuDefaultIntranet = [
+  {
+    label: 'Marcas',
+    link: '#',
+    child: [
+      {
+        label: 'Gestionar Marca',
+        link: '/Intranet/vistas/principal',
+        child: [],
+        target: false,
+      },
+      {
+        label: 'Link 2',
+        link: `#`,
+        child: [],
+        target: false,
+      },
+      {
+        label: 'Link 2',
+        link: `#`,
+        child: [],
+        target: false,
+      },
+
+    ],
+  },
+  {
+    label: 'Categorias',
+    link: '#',
+    child: [
+      {
+        label: 'Gestionar Categorias',
+        link: '/Intranet/vistas/categorias',
+        child: [],
+        target: false,
+      },
+      {
+        label: 'Link 2',
+        link: '',
+        child: [],
+        target: false,
+      },
+
+    ],
+  },
+  {
+    label: 'Productos',
+    link: '#',
+    child: [
+      {
+        label: 'Gestionar Productos',
+        link: '/Intranet/vistas/productos',
+        child: [],
+        target: false,
+      },
+      {
+        label: 'Productos Recomendados',
+        link: '/',
+        child: [],
+        target: false,
+      },
+  
+    ],
+  },
+  {
+    label: 'Pedidos',
+    link: '#',
+    child: [
+      {
+        label: 'Gestionar Pedidos',
+        link: '/Intranet/vistas/productos',
+        child: [],
+        target: false,
+      },
+      {
+        label: 'Productos Recomendados',
+        link: '/',
+        child: [],
+        target: false,
+      },
+  
+    ],
+  },
+  {
+    label: 'Usuarios',
+    link: '#',
+    child: [
+      {
+        label: 'Gestionar Usuarios',
+        link: 'http://biblioteca.upn.edu.pe/',
+        child: [],
+        target: false,
+      },
+      {
+        label: 'Link 2',
+        link: ' ',
+        child: [],
+        target: false,
+      },
+
+    ],
+  },
+
+  {
+    label: 'Opciones',
+    link: '#',
+    child: [
+      {
+        label: 'Perfil',
+        link: '/',
+        child: [],
+        target: false,
+      },
+      {
+        label: 'Logout',
+        link: '/Intranet/vistas/login',
+        child: [],
+        target: false,
+      },
+
+    ],
+  },
+
 ]

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Navbar from "../../../../components/UI/molecules/nav/Nav";
-
+import Navigations from "../../../../components/UI/molecules/navigation/Navigation";
+import { menuDefaultIntranet } from "../../../../consts/menu";
 
  const Categorias = () => {
 
@@ -17,7 +18,8 @@ import Navbar from "../../../../components/UI/molecules/nav/Nav";
       return (
         <div>
           {/* <h1>Nombre de tu aplicación</h1> */}
-          <Navbar links={links} active={true} classname="myCuFstomClass" />
+             <Navigations menu={menuDefaultIntranet} />
+          {/* <Navbar links={links} active={true} classname="myCuFstomClass" /> */}
           <h1>Categorias</h1>
         </div>
       );

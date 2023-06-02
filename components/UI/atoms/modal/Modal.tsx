@@ -33,14 +33,15 @@ const Modals = ({
 
   active,
 }: Props) => {
-  const classprops: string = classNames(extractClass(styles, classname));
+  const classprops: string = extractClass(styles, classname);
   return (
     <Modal
-    className={active ? classprops : classname}
+    className={styles.modal}
       {...props}
       show={show}
       onHide={onHide}
       size={size}
+      backdrop="static"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >

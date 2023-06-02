@@ -32,6 +32,6 @@
     "pages",
     "pages/api/**/*.ts",
     "config"
-  ],
+, "components/view"  ],
   "exclude": ["node_modules", ".next"]
 }
