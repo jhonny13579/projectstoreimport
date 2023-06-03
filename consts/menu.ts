@@ -1,6 +1,45 @@
 // import { get } from 'local-storage'
 // import { SET_DATA_DOCENTE } from './storageConst'
 // const dataUser: any = get(SET_DATA_DOCENTE)
+export const listUsers =
+[
+  { id: 1, type: "cliente" },
+  { id: 2, type: "asesor" },
+  { id: 3, type: "administrador" },
+  { id: 4, type: "supervisor" },
+  { id: 5, type: "analista" },
+  { id: 6, type: "gerente" }
+]
+export  const listaTipoDocumento = [
+  { value: 1, label: 'DNI' },
+  { value: 2, label: 'Cédula' },
+  { value: 3, label: 'Pasaporte' },
+  { value: 4, label: 'Libreta Militar' },
+  // Agrega más opciones según tus necesidades
+];
+
+export const listCountries = [
+  { code: 1, name: "Argentina" },
+  { code: 2, name: "Bolivia" },
+  { code: 3, name: "Brasil" },
+  { code: 4, name: "Chile" },
+  { code: 5, name: "Colombia" },
+  { code: 6, name: "Costa Rica" },
+  { code: 7, name: "Cuba" },
+  { code: 8, name: "Ecuador" },
+  { code: 9, name: "El Salvador" },
+  { code: 10, name: "Guatemala" },
+  { code: 11, name: "Honduras" },
+  { code: 12, name: "México" },
+  { code: 13, name: "Nicaragua" },
+  { code: 14, name: "Panamá" },
+  { code: 15, name: "Paraguay" },
+  { code: 16, name: "Perú" },
+  { code: 17, name: "República Dominicana" },
+  { code: 18, name: "Uruguay" },
+  { code: 19, name: "Venezuela" }
+]
+
 export const menuDefault = [
   {
     label: 'Sesiones de clase',
@@ -220,6 +259,11 @@ export const menuDefault = [
     target: false,
   },
 ]
+
+
+//-----------------------------------------------------------------
+
+
 export const menuDefaultIntranet = [
   {
     label: 'Marcas',
@@ -281,7 +325,12 @@ export const menuDefaultIntranet = [
         child: [],
         target: false,
       },
-  
+      {
+        label: 'Unidad de Medida Productos',
+        link: '/Intranet/vistas/unidadesmedida',
+        child: [],
+        target: false,
+      },
     ],
   },
   {
@@ -309,7 +358,7 @@ export const menuDefaultIntranet = [
     child: [
       {
         label: 'Gestionar Usuarios',
-        link: 'http://biblioteca.upn.edu.pe/',
+        link: '/Intranet/vistas/usuarios',
         child: [],
         target: false,
       },
@@ -322,7 +371,24 @@ export const menuDefaultIntranet = [
 
     ],
   },
+  {
+    label: 'Negocios',
+    link: '#',
+    child: [
+      {
+        label: 'Gestionar Negocios  ',
+        link: '/Intranet/vistas/negocios',
+        target: false,
+      },
+      {
+        label: 'Productos por Negocio',
+        link: '/Intranet/vistas/productosxnegocio',
+      
+        target: false,
+      },
 
+    ],
+  },
   {
     label: 'Opciones',
     link: '#',

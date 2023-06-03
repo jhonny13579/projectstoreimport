@@ -6,6 +6,7 @@ import type { CSSProperties } from 'react'
 type Props = {
   type: string
   name: string
+  autocomplete: string
   id: string
   classname?: string
   onchange?: any
@@ -26,6 +27,7 @@ const Input = ({
   type,
   name,
   id,
+  autocomplete='',
   classname = '',
   onchange,
   disabled = false,
@@ -58,6 +60,7 @@ const Input = ({
       style={style}
       min={min}
       max={max}
+      autoComplete={autocomplete}
       value={value}
       readOnly={readOnly}
       onClick={onClick}

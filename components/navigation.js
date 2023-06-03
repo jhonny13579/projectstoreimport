@@ -27,7 +27,19 @@ const navigation = () => {
       </li>
 
       <li>
-        <Link href="/Intranet/vistas/categorias">Productos</Link>
+        <Link href="/Intranet/vistas/categorias">Categorias</Link>
+      </li>
+      <li>
+        <Link href="/Intranet/vistas/usuarios">Usuarios</Link>
+      </li>
+      <li>
+        <Link href="/Intranet/vistas/unidadesmedida">Unidades de Medida</Link>
+      </li>
+      <li>
+        <Link href="/Intranet/vistas/negocios">Negocios</Link>
+      </li>
+      <li>
+        <Link href="/Intranet/vistas/productosxnegocio">Negocios</Link>
       </li>
     </ul>
   );

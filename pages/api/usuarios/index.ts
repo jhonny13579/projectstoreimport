@@ -1,11 +1,12 @@
 import axiosfetchPublic from '../../../config/axios'
 
 const API = {
-  BylistCategory: async () => {
-    const URL = `/categorias/list/`
+  ListUsers: async (item: any) => {
+    const URL = '/usuarios/listusers';
     try {
-      const result: any = await axiosfetchPublic(URL)    
-      console.log("verrrrrdd", result);
+      const result: any = await axiosfetchPublic.post(URL, item);
+     
+    
       return result.data;
     } catch (error) {
       console.log(error);
@@ -13,20 +14,20 @@ const API = {
     }
   },
 
-  SaveCategory: async (item: any) => {
-    const URL = '/categorias/savecategory';
+  SaveUsers: async (item: any) => {
+    const URL = '/usuarios/saveusers';
     try {
       const result: any = await axiosfetchPublic.post(URL, item);
       console.log("verrrrr", result);
       return result.data;
     } catch (error) {
-      console.log(error);
+      console.log("show me the error",error);
       return null;
     }
   },
 
-  UpdateCategory: async (item: any) => {
-    const URL = '/categorias/updatecategory';
+  UpdateUsers: async (item: any) => {
+    const URL = '/usuarios/updateusers';
     try {
       const result: any = await axiosfetchPublic.post(URL, item);
       console.log("verrrrupdater", result);
@@ -37,8 +38,8 @@ const API = {
     }
   },
 
-  DisabledCategory: async (item: any) => {
-    const URL = '/categorias/disablecategory';
+  DisabledUsers: async (item: any) => {
+    const URL = '/usuarios/disabledusers';
     try {
       const result: any = await axiosfetchPublic.post(URL, item);
       console.log("verrrrrdd", result);

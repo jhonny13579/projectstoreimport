@@ -34,8 +34,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         const URL = apiPath.marcas.PATH_SaveMarcas
         const apiCall: AxiosInstance = axiosCreate(Api)
         const {data} = await apiCall.post(URL, item)
-        const result = data.Data.lresponse
-        console.log("xxxxxx",result)
+        const result = data.Data
+        console.log("xxxxxxsave",result)
         res.status(200).json(result)
       
       } catch (error) {
@@ -50,10 +50,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         const URL = apiPath.marcas.PATH_UpdateMarca
         const apiCall: AxiosInstance = axiosCreate(Api)
         const {data} = await apiCall.post(URL, item)
-        const result = data.Data.lresponse
+        const result = data.Data
      
         res.status(200).json(result)
-      
+        console.log("xxxxxxipdate",result)
       } catch (error) {
         console.log(error)
         res.status(500).json({ error: 'Internal Server Error' });
@@ -66,8 +66,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         const URL = apiPath.marcas.PATH_DisabledMarca
         const apiCall: AxiosInstance = axiosCreate(Api)
         const {data} = await apiCall.post(URL, item)
-        const result = data.Data.lresponse
-     
+        const result = data.Data
+        console.log("xxxxxxdisa",result)
         res.status(200).json(result)
       
       } catch (error) {

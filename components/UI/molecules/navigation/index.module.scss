@@ -1,6 +1,8 @@
 .nabContent {
   // max-width: 1140px;
   padding: 0px;
+  align-items: center;
+  
   @media (min-width: 1200px) {
     max-width: 1140px !important;
   }

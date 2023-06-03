@@ -3,46 +3,67 @@
 export const apiPath = {
   categoria: {
     PATH_ListarByCategory: "TPMaestraSelect/ListarCategoria",
-
-
-
-
+    PATH_SaveCategory: "TPMaestraSelect/ListarCategoria",
+    PATH_UpdateCategory: "TPMaestraSelect/ModificarMarca",
+    PATH_DisabledCategory: "TPMaestraSelect/ModificarMarca",
   },
 
   marcas: {
     PATH_ListarByMarca: "TPMaestraSelect/ListarMarca",
     PATH_SaveMarcas: "TPMaestraSelect/RegistrarMarca",
     PATH_UpdateMarca: "TPMaestraSelect/ModificarMarca",
-      PATH_DisabledMarca: "TPMaestraSelect/ModificarMarca",
-  
+    PATH_DisabledMarca: "TPMaestraSelect/ModificarMarca",
+
   },
   productos: {
-  
-  
-
-    PATH_ListarByProductoByImagen: (imageID: string) =>
-    `TPMaestraSelect/ListarGaleria/${imageID}`,
+    PATH_ListarByProductoByImagen: (imageID: string) => `TPMaestraSelect/ListarGaleria/${imageID}`,
 
     PATH_ListarProductRecomendado: "TPMaestraProductos/ListarMaestraRecomendados",
+    PATH_ListarProducts: "TPMaestraProductos/ListarMaestraProductos",  
+    PATH_SaveProducts: "TPMaestraProductos/RegistrarMaestraProductos",  
+    PATH_DisabledProductos: "TPMaestraProductos/ModificarMaestraProductos",
+    PATH_Disabled: "TPMaestraProductos/ModificarMaestraProductos",
+    PATH_SaveImage: "TPMaestraSelect/InsertarGaleria",
+    //Primer valor paramuno es I
+    PATH_GetProductsActualizados: (IdNegocio: string, IdProducto: string) => `/TPMaestraProductos/ListarProductosActualizados/${IdNegocio}/${IdProducto}`,
 
+    PATH_ListarProductosByNegocio: (prodId: string) => `TPMaestraProductos/ListarMaestraProductosxNegocio/${prodId}`,
 
-    PATH_GetProductsActualizados: (paramuno: string, paramdos: string) =>
-      `/TPMaestraProductos/ListarProductosActualizados/${paramuno}/${paramdos}`,
-
-      PATH_ListarProductosByNegocio: (prodId: string) =>
-      `TPMaestraProductos/ListarMaestraProductosxNegocio/${prodId}`,
-
-      PATH_ListarProductosInactives: (prodId: string) =>
-      `TPMaestraProductos/ListarProductosInactivos/${prodId}`,
+    PATH_ListarProductosInactives: (IdNegocio: string) => `TPMaestraProductos/ListarProductosInactivos/${IdNegocio}`,
   },
 
 
+  usuarios: {
+    PATH_ListarByUsers: "Login/ListarUsuarios",
+    PATH_SaveUser: "Login/LoginInsertar",
+    PATH_UpdateUser: "Login/ModificarLogin",
+    PATH_DisabledUser: "Login/ModificarLogin",
+
+  },
 
 
+  unidadMedida: {
+    PATH_ListarUNDMedida: "TPMaestraSelect/ListarUnidadMedida",
+    PATH_SaveUNDMedida: "TPMaestraSelect/RegistrarUnidadMedida",
+    PATH_UpdateUNDMedida: "TPMaestraSelect/ModificarUnidadMedida",
+    PATH_DisableUNDMedida: "TPMaestraSelect/ModificarUnidadMedida",
 
+  },
 
+  negocios: {
+    PATH_ListarNegocios: "TPMaestraNegocio/ListarMaestraNegocio",
+    PATH_SaveNegocios: "TPMaestraNegocio/RegistrarMaestraNegocio",
+    PATH_UpdateNegocios: "TPMaestraNegocio/ModificarMaestraNegocio",
+    PATH_DisableNegocios: "TPMaestraNegocio/ModificarMaestraNegocio",
+    PATH_ListarProductosByNegocios: (IdNegocio: string) => `TPMaestraProductos/ListarMaestraProductosxNegocio/${IdNegocio}`,
+  },
+  pedidos: {
+    PATH_ListarUNDMedida: "TPMaestraSelect/ListarUnidadMedida",
+    PATH_SaveUNDMedida: "TPMaestraSelect/RegistrarUnidadMedida",
+    PATH_UpdateUNDMedida: "TPMaestraSelect/ModificarUnidadMedida",
+    PATH_DisableUNDMedida: "TPMaestraSelect/ModificarUnidadMedida",
 
-  
+  },
 
 
   // asistencia: {

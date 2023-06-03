@@ -12,13 +12,6 @@ import { menuDefaultIntranet } from "../../../../consts/menu";
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-// const links = [
-//   { text: "Marcas", url: "/Intranet/vistas/principal" },
-//   { text: "Productos", url: "/Intranet/vistas/productos" },
-//   { text: "Categorias", url: "/Intranet/vistas/categorias" },
-//   { text: "Ir al Login", url: "/Intranet/vistas/login" },
-//   // Agrega más enlaces aquí
-// ];
 
 const TableDinamic = dynamic(
   () => import("../../../../components/UI/molecules/tableDinamic/Table"),
@@ -29,7 +22,7 @@ const TableDinamic = dynamic(
 import TableOne from "../../../../components/UI/organisms/table/Tabla";
 import Input from "../../../../components/UI/atoms/input/Input";
 import Label from "../../../../components/UI/atoms/label/Label";
-import { Col, ModalHeader, Row } from "react-bootstrap";
+import { Col, ModalHeader, Row, Form } from "react-bootstrap";
 
 const Principal = () => {
   const handleEditar = (rowData) => {
@@ -88,7 +81,7 @@ const Principal = () => {
       buttons: (item) => (
         <>
           <Button className={styles.button} onClick={() => handleEditar(item)}>
-            <EditIcon/>
+            <EditIcon />
             Editar
           </Button>
           <> </>
@@ -96,7 +89,7 @@ const Principal = () => {
             className={styles.buttonDisabled}
             onClick={() => handleEliminar(item)}
           >
-             <RemoveCircleIcon />
+            <RemoveCircleIcon />
             Eliminar
           </Button>
         </>
@@ -123,12 +116,14 @@ const Principal = () => {
 
   const listarMarcas = () => {
     const promise = apiMarcas.BylistMarca();
-
     promise.then((respu) => {
       console.log("BylistMarquita", respu);
       setDataDummy(respu);
     });
   };
+
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -217,18 +212,18 @@ const Principal = () => {
         )}
         <h1>Marcas</h1>
         <div className={styles.container}>
-          <Button className={styles.button}  variant="primary" onClick={(_) => handleOpenModal()}>
-          <AddIcon />
+          <Button className={styles.button} variant="primary" onClick={(_) => handleOpenModal()}>
+            <AddIcon />
             Agregar Nuevo
-            
+
           </Button>
           <input
-        type="text"
-        className={styles.searchInput}
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-        placeholder="Buscar"
-      />
+            type="text"
+            className={styles.searchInput}
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder="Buscar"
+          />
           {/* <Input
             classname={styles.button}
             type="button"
@@ -239,10 +234,10 @@ const Principal = () => {
         <Row>
 
           <Col xs={12} sm={12} className={styles.tabla}>
-          <TableOne columns={COLUMNS} data={filteredData}></TableOne>
+            <TableOne columns={COLUMNS} data={filteredData}></TableOne>
 
-              
-{/*          
+
+            {/*          
             <TableDinamic
               classname=""
               columns={COLUMNS}
@@ -250,7 +245,7 @@ const Principal = () => {
             /> */}
           </Col>
         </Row>
-     
+
 
         <div className={styles.modal}>
           <ModalForm
@@ -261,7 +256,7 @@ const Principal = () => {
             active={false}
           >
             {/* Contenido del modal */}
-
+            <Row>
             {stateEdit ? (
               <>
                 <Input
@@ -275,20 +270,22 @@ const Principal = () => {
               <></>
             )}
             <div className={styles.modalInputs}>
+            <Col xs={12} sm={12} className="form-group " >
+            <Form.Label style={{ color: 'black', fontWeight: 'bold' }}>Nombre de la Marca</Form.Label>
+              <Input
+                type="input"
+                onchange={handleInputChange}
+                value={formData.Name}
+                placeholder="Ingrese nombre"
+                name="Name"
+              ></Input>
+                </Col>
+            </div >
 
-            <Input
-              type="input"
-              onchange={handleInputChange}
-              value={formData.Name}
-              name="Name"
-            ></Input>
-
-            </div>
-           
-
+              </Row>
             {stateEdit ? (
               <>
-                <Button clasNname={styles.button} onClick={handleSubmitEdit}>Actualizar</Button>
+                <Button className={styles.button} onClick={handleSubmitEdit}>Actualizar</Button>
               </>
             ) : (
               <>

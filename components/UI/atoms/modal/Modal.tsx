@@ -36,7 +36,7 @@ const Modals = ({
   const classprops: string = extractClass(styles, classname);
   return (
     <Modal
-    className={styles.modal}
+      className={styles.modal}
       {...props}
       show={show}
       onHide={onHide}

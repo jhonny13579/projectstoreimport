@@ -3,37 +3,23 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { apiPath } from './../../../consts/path'
 import { objecApi } from '../../../consts/storageConst'
 import { AxiosInstance } from 'axios'
-
+import NodeCache from 'node-cache';
 type Data = {}
 
 const { Api } = objecApi
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { params }: any = req.query
-
+  const cache = new NodeCache();
   switch (params[0]) {
-    case 'list': {
-      try {
-        const URL = apiPath.categoria.PATH_ListarByCategory
-        const apiCall: AxiosInstance = axiosCreate(Api)        
-        const { data } = await apiCall(URL)
-        const result = data.Data.lresponse
-        res.status(200).json(result)
-        // console.log("resultadoooo",result)
-      } catch (error) {
-        console.log(error)
-      }
-      break
-    }
-
-    case 'savecategory': {
+    case 'listusers': {
       try {
         const item = req.body
-        const URL = apiPath.categoria.PATH_SaveCategory
+        const URL = apiPath.usuarios.PATH_ListarByUsers
         const apiCall: AxiosInstance = axiosCreate(Api)
         const {data} = await apiCall.post(URL, item)
-        const result = data.Data
-       
+        const result = data.Data.lresponse  
+      
         res.status(200).json(result)
       
       } catch (error) {
@@ -42,26 +28,44 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       }
       break
     }
-    case 'updatecategory': {
+    
+    case 'saveusers': {
       try {
         const item = req.body
-        const URL = apiPath.categoria.PATH_UpdateCategory
+        const URL = apiPath.usuarios.PATH_SaveUser
+        const apiCall: AxiosInstance = axiosCreate(Api)
+        const {data} = await apiCall.post(URL, item)
+        console.log("xxxxxxsave",data)
+        const result = data.Data
+        console.log("xxxxxxsave",result)
+        res.status(200).json(result)
+      
+      } catch (error) {
+        console.log("QUIERO VER EL ERROROOO",error)
+        res.status(500).json({ error: 'Internal Server Error' });
+      }
+      break
+    }
+    case 'updateusers': {
+      try {
+        const item = req.body
+        const URL = apiPath.usuarios.PATH_UpdateUser
         const apiCall: AxiosInstance = axiosCreate(Api)
         const {data} = await apiCall.post(URL, item)
         const result = data.Data
      
         res.status(200).json(result)
-      
+        console.log("xxxxxxipdate",result)
       } catch (error) {
         console.log(error)
         res.status(500).json({ error: 'Internal Server Error' });
       }
       break
     }
-    case 'disablecategory': {
+    case 'disabledusers': {
       try {
         const item = req.body
-        const URL = apiPath.categoria.PATH_DisabledCategory
+        const URL = apiPath.usuarios.PATH_DisabledUser
         const apiCall: AxiosInstance = axiosCreate(Api)
         const {data} = await apiCall.post(URL, item)
         const result = data.Data
@@ -74,6 +78,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       }
       break
     }
+    default:
+      res.status(404).json({ error: 'Ruta no encontrada' });
+      break;
+  
   }
 }
 

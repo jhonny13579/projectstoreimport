@@ -2,15 +2,38 @@ import axiosfetchPublic from '../../../config/axios'
 
 const API = {
   BylistProductoImage: async (code: string) => {
+    
+
+
     const URL = `/producto/listproducto/${code}`
-    const result: any = await axiosfetchPublic(URL)    
-    return result.data
+
+
+    try {
+      const result: any = await axiosfetchPublic(URL)    
+      console.log("verrrrrdd", result);
+      return result.data;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+
   },
 
   BylistProductUpdate: async (code1: string, code2:string) => {
     const URL = `/producto/listproducupdate/${code1}/${code2}`
-    const result: any = await axiosfetchPublic(URL)    
-    return result.data
+
+    
+    try {
+      const result: any = await axiosfetchPublic(URL)    
+      console.log("verrrrrdd", result);
+      return result.data;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+
+
+
   },
 
  ByListProducRecomendado: async (item: any) => {
@@ -29,14 +52,32 @@ const API = {
 
 BylistProductoNegocio: async (code: string) => {
   const URL = `/producto/listproducbynegocio/${code}`
-  const result: any = await axiosfetchPublic(URL)    
-  return result.data
+
+
+
+
+    try {
+      const result: any = await axiosfetchPublic(URL)    
+      console.log("verrrrrdd", result);
+      return result.data;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+
 },
 
 BylistProductoInactive: async (code: string) => {
   const URL = `/producto/listproducinactive/${code}`
-  const result: any = await axiosfetchPublic(URL)    
-  return result.data
+  try {
+    const result: any = await axiosfetchPublic(URL)    
+    console.log("verrrrrdd", result);
+    return result.data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+
 },
 };
 

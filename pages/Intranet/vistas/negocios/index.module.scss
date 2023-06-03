@@ -11,7 +11,7 @@
       padding: 8px;
       border: 1px solid #000000;
       background-color: rgba(59, 62, 59, 0.775);
-      color:#e6dddd;
+      color:#ffffff;
     }
 
     th {
@@ -24,6 +24,8 @@
     // }
   }
 }
+
+
 
 .container {
   display: flex;
@@ -76,7 +78,16 @@
     // Estilos adicionales cuando la clase "custom-modal" está activa
     // ...
   }
+  .modaldialog {
+    // Estilos para el diálogo del modal
+    max-width: 800px; // Ajusta el ancho máximo según tus necesidades
+    margin: 30px auto;
 
+    .modalcontent {
+      // Estilos para el contenido del modal
+      width: 100%; // Asegúrate de que el contenido ocupe todo el ancho
+    }
+  }
   .modal-header {
     // Estilos para el encabezado del modal
     padding: 10px;

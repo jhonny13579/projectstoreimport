@@ -1,8 +1,8 @@
 import axiosfetchPublic from '../../../config/axios'
 
 const API = {
-  BylistCategory: async () => {
-    const URL = `/categorias/list/`
+  listUnidadesMedida: async () => {
+    const URL = `/unidadmedida/listunidadmedida/`
     try {
       const result: any = await axiosfetchPublic(URL)    
       console.log("verrrrrdd", result);
@@ -13,8 +13,8 @@ const API = {
     }
   },
 
-  SaveCategory: async (item: any) => {
-    const URL = '/categorias/savecategory';
+  SaveUnidadesMedida: async (item: any) => {
+    const URL = '/unidadmedida/saveunidadmedida';
     try {
       const result: any = await axiosfetchPublic.post(URL, item);
       console.log("verrrrr", result);
@@ -25,8 +25,8 @@ const API = {
     }
   },
 
-  UpdateCategory: async (item: any) => {
-    const URL = '/categorias/updatecategory';
+  UpdateUnidadesMedida: async (item: any) => {
+    const URL = '/unidadmedida/updatunidadmedida';
     try {
       const result: any = await axiosfetchPublic.post(URL, item);
       console.log("verrrrupdater", result);
@@ -37,8 +37,8 @@ const API = {
     }
   },
 
-  DisabledCategory: async (item: any) => {
-    const URL = '/categorias/disablecategory';
+  DisabledUnidadesMedida: async (item: any) => {
+    const URL = '/unidadmedida/disableunidadmedida';
     try {
       const result: any = await axiosfetchPublic.post(URL, item);
       console.log("verrrrrdd", result);
