@@ -20,6 +20,24 @@ const Categorias = () => {
     const [dataUser, setDataUser] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [searchValue, setSearchValue] = useState("");
+    //
+    const handleEditar = (rowData) => {
+        // Lógica para editar el registro con los datos de 'rowData'
+        console.log("Editar registro:", rowData);
+    };
+
+    const handleEliminar = (rowData) => {
+        const confirmacion = window.confirm(
+            "¿Estás seguro de que deseas eliminar el registro?"
+        );
+
+        if (confirmacion) {
+            // Lógica para eliminar el registro con los datos de 'rowData'
+            console.log("Eliminar registro:", rowData);
+        }
+    };
+
+    //
     const COLUMNS = [
         {
             label: "Código",
